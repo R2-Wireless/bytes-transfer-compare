@@ -1,15 +1,19 @@
 services:
   redis:
     image: "redis/redis-stack-server:latest"
-    ports:
-      - "6380:6379"
-  get:
-    depends_on: [redis]
-    build: ./get
-    environment:
-      - REDIS_URL=redis://redis:6380/0
   set:
-    depends_on: [redis]
+    depends_on:
+      redis:
+        condition: service_started
     build: ./set
     environment:
-      - REDIS_URL=redis://redis:6380/0
+      - REDIS_URL=redis://redis:6379/0
+    healthcheck:
+      test: "exit 0"
+  get:
+    depends_on:
+      redis:
+        condition: service_started
+    build: ./get
+    environment:
+      - REDIS_URL=redis://redis:6379/0

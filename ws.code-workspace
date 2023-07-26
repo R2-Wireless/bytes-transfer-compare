@@ -1,12 +1,20 @@
 {
   "folders": [
     {
-      "name": "redis-set-get-rust",
+      "name": "redis-old/get",
       "path": "redis-set-get/get"
     },
     {
-      "name": "redis-set-get-python",
+      "name": "redis-old/set",
       "path": "redis-set-get/set"
+    },
+    {
+      "name": "shared-memory/read",
+      "path": "shared-memory/read"
+    },
+    {
+      "name": "shared-memory/write",
+      "path": "shared-memory/write"
     }
   ],
   "extensions": {

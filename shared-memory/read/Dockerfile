@@ -9,9 +9,10 @@ RUN echo 'fn main() { println!("Is dummy"); }' > ./dummy.rs && \
 COPY ./src ./src
 RUN CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse cargo build --release
 
-FROM python:3.11.4-slim as runtime
+FROM scratch as runtime
 
 WORKDIR /app
 COPY --from=builder /build/target/release/main .
 
-CMD ["./main"]
+ENTRYPOINT [ "/bin/bash", "-c", "/app/$0 $" ] 
+CMD [ "main" ]
