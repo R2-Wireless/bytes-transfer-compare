@@ -1,16 +1,12 @@
 {
   "folders": [
     {
-      "path": "python"
+      "name": "redis-set-get-rust",
+      "path": "redis-set-get/get"
     },
     {
-      "path": "nodejs"
-    },
-    {
-      "path": "rust-sync"
-    },
-    {
-      "path": "rust-tokio"
+      "name": "redis-set-get-python",
+      "path": "redis-set-get/set"
     }
   ],
   "extensions": {
