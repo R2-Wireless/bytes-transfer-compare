@@ -1,20 +1,15 @@
-extern crate redis;
-extern crate tokio;
-
-use redis::AsyncCommands;
+use std::io::Read;
+use std::io::BufReader;
+use std::fs::File;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let redis_url = std::env::var("REDIS_URL").unwrap_or(String::from("redis://localhost:6379/0"));
-
-    let mut conn = redis::Client::open(redis_url)
-        .expect("Invalid connection URL")
-        .get_multiplexed_async_connection()
-        .await
-        .expect("failed to connect to Redis");
-
+    let f = File::open("/shared_data/data.txt")?;
+    let mut reader = BufReader::new(f);
+    let mut large_data: Vec<u8> = Vec::new();
+    
     let start = std::time::Instant::now();
-    let large_data: Vec<u8> = conn.get("my_large_data").await?;
+    reader.read_to_end(&mut large_data)?;
     assert_eq!(large_data[2000], 5u8);
     println!(
         "Successfully got \"my_large_data\" of size {}, that took {:?}",
