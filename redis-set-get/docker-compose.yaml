@@ -8,12 +8,12 @@ services:
     build: ./set
     environment:
       - REDIS_URL=redis://redis:6379/0
-    healthcheck:
-      test: "exit 0"
   get:
     depends_on:
       redis:
         condition: service_started
+      set:
+        condition: service_completed_successfully
     build: ./get
     environment:
       - REDIS_URL=redis://redis:6379/0
