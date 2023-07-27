@@ -1,0 +1,8 @@
+services:
+  write:
+    build: ./write
+  read:
+    depends_on:
+      write:
+        condition: service_completed_successfully
+    build: ./read
