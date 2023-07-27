@@ -4,3 +4,5 @@ start-shared-memory:
 	(cd shared-memory && docker compose -p shared-memory up --build)
 start-kafka:
 	(cd kafka && docker compose -p kafka up --build)
+start-rabbitmq:
+	(cd rabbitmq && docker compose -p rabbitmq up --build)
