@@ -17,8 +17,8 @@ def start() -> None:
         value_serializer=serializer
     )
 
-    start = time.time()
     large_data = bytearray(49152000 * 4)
-    large_data[2000] = 5
-    producer.send('messages', "hello world")
+    large_data_bytes = bytes(large_data)
+    start = time.time()
+    producer.send('my_large_data_stream', large_data_bytes.decode())
     print(f"Successfully set \"my_large_data\" of size {len(large_data)}, that took {(time.time() - start) * 1000}ms")
