@@ -7,7 +7,7 @@ use memmap2::Mmap;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let f = OpenOptions::new()
     .read(true)
-    .open("/tmp/test.mmap")?;
+    .open("/shared_data/test.mmap")?;
 
     let mmap = unsafe { Mmap::map(&f)? };
 

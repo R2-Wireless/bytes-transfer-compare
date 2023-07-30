@@ -2,7 +2,7 @@ import time
 import mmap
 
 def start() -> None:
-    file_path = "/tmp/test.mmap"
+    file_path = "/shared_data/test.mmap"
     size = 49152000 * 4
     large_data = bytearray(size)
     large_data[2000] = 5
