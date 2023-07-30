@@ -13,6 +13,10 @@
       "path": "shared-memory/read"
     },
     {
+      "name": "shared-memory/write-rust",
+      "path": "shared-memory/write-rust"
+    },
+    {
       "name": "shared-memory/write",
       "path": "shared-memory/write"
     },

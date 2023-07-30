@@ -1,6 +1,6 @@
 services:
   write:
-    build: ./write
+    build: ./write-rust
     volumes:
       - shared-data:/shared_data
   read:
