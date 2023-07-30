@@ -1,0 +1,15 @@
+services:
+  write:
+    build: ./write
+    volumes:
+      - shared-data:/shared_data
+  read:
+    depends_on:
+      write:
+        condition: service_completed_successfully
+    build: ./read
+    volumes:
+      - shared-data:/shared_data
+
+volumes:
+  shared-data:

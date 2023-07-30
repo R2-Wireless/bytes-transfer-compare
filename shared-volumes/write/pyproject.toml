@@ -9,9 +9,10 @@ packages = [
 
 [tool.poetry.scripts]
 start = "src.start:start"
+read = "src.start:read"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.11"
 
 [build-system]
 requires = ["poetry-core"]

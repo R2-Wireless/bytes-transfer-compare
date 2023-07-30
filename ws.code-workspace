@@ -2,11 +2,11 @@
   "folders": [
     {
       "name": "redis-old/get",
-      "path": "redis-set-get/get"
+      "path": "redis-old/get"
     },
     {
       "name": "redis-old/set",
-      "path": "redis-set-get/set"
+      "path": "redis-old/set"
     },
     {
       "name": "shared-memory/read",
@@ -15,6 +15,30 @@
     {
       "name": "shared-memory/write",
       "path": "shared-memory/write"
+    },
+    {
+      "name": "shared-volumes/read",
+      "path": "shared-volumes/read"
+    },
+    {
+      "name": "shared-volumes/write",
+      "path": "shared-volumes/write"
+    },
+    {
+      "name": "kafka/producer",
+      "path": "kafka/producer"
+    },
+    {
+      "name": "kafka/consumer",
+      "path": "kafka/consumer"
+    },
+    {
+      "name": "rabbitmq/producer",
+      "path": "rabbitmq/producer"
+    },
+    {
+      "name": "rabbitmq/consumer",
+      "path": "rabbitmq/consumer"
     }
   ],
   "extensions": {
